@@ -68,7 +68,7 @@ print q_tok
 obj = tfidf()	
 	
 for i in range(0,doc_len):
-	file_content[i] = open(documents[i]).read()
+	file_content[i] = open("Corpus/"+documents[i]).read()
 	file_content[i] = file_content[i].lower()
 	tokens[i] = nltk.word_tokenize(file_content[i])
 	obj.addDocument(titles[i],tokens[i])
