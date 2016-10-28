@@ -1,11 +1,12 @@
+#-----------------------------------------------Imports-------------------------------------------------------------------------------
 import string 
 import nltk
 from nltk import tokenize
 import re
-
+#-----------------Read a text file----------------------------------------------------------------------------------------------------
 fp = open("elon.txt","r")
 
-
+#---------------------Essential starters and suffixes-----------------------------------------------------------------------------
 caps = "([A-Z])"
 prefixes = "(Mr|St|Mrs|Ms|Dr)[.]"
 suffixes = "(Inc|Ltd|Jr|Sr|Co)"
@@ -14,6 +15,7 @@ acronyms = "([A-Z][.][A-Z][.](?:[A-Z][.])?)"
 websites = "[.](com|net|org|io|gov)"
 sentences = []
 
+#-----------------------_Function to exclude all types of punctuation ambiguities ----------------------------------------
 def split_into_sentences(text):
     text = " " + text + "  "
     text = text.replace("\n"," ")
@@ -40,7 +42,7 @@ def split_into_sentences(text):
     return sentences
 
 
-#----------------------Editing here.-------------------
+#----------------------Editing here.--------------------------------------------------------------------------------------
 t=[]
 s= fp.read()
 t = split_into_sentences(s)
